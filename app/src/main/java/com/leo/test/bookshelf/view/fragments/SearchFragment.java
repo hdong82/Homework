@@ -74,6 +74,7 @@ public class SearchFragment extends BaseFragment {
         inflater.inflate(R.menu.search_menu, menu);
         SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setMaxWidth(Integer.MAX_VALUE);
+        searchView.setSubmitButtonEnabled(true);
 
         SearchView.SearchAutoComplete searchAutoComplete = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
         searchAutoComplete.setHintTextColor(Color.WHITE);
@@ -106,6 +107,7 @@ public class SearchFragment extends BaseFragment {
             searchAutoComplete.setText(value);
             searchAutoComplete.setSelection(value.length());
             searchAutoComplete.dismissDropDown();
+            searchViewModel.search(value);
         });
         searchAutoComplete.setAdapter(suggestionAdapter);
     }
