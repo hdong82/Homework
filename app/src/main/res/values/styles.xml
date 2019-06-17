@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:textColorPrimary">@color/color_white</item>
+    </style>
+    
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    
+    <style name="AppTheme.AllTranspaency_statusbar" parent="AppTheme"/>
+    
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    
+    <style name="AppTheme.Transparency_Stausbar" parent="AppTheme.NoActionBar"/>
+
+    <style name="CustomProgressDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    
+    <style name="AppTheme.RippleLayout" parent="AppTheme">
+        <item name="mrl_rippleAlpha">0.1</item>
+        <item name="mrl_rippleFadeDuration">20</item>
+        <item name="mrl_rippleDuration">150</item>
+        <item name="mrl_rippleColor">@color/color_black</item>
+        <item name="mrl_rippleDelayClick">true</item>
+        <item name="mrl_rippleHover">true</item>
+        <item name="mrl_rippleOverlay">true</item>
+    </style>
+    
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+    </style>
+</resources>

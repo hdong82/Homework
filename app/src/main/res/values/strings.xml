@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">BookShelf</string>
+    <string name="app_name_uppercases">BOOKS</string>
+
+    <string name="text_ok">확인</string>
+    <string name="text_cancel">취소</string>
+    <string name="tab_title_newbook">New</string>
+    <string name="tab_title_search">Search</string>
+    <string name="tab_title_bookmark">Bookmark</string>
+    <string name="tab_title_history">History</string>
+
+    <string name="text_link">link</string>
+    <string name="text_title">Subject</string>
+    <string name="text_subtitle">SubTitle</string>
+    <string name="text_isbn13">ISBN-13</string>
+    <string name="text_price">Price</string>
+    <string name="text_authors">Author</string>
+    <string name="text_publisher">Publisher</string>
+    <string name="text_language">Language</string>
+    <string name="text_isbn10">ISBN-10</string>
+    <string name="text_pages">Pages</string>
+    <string name="text_year">Published</string>
+    <string name="text_rating">Rating</string>
+    <string name="text_ebook">Ebook</string>
+    <string name="text_pdf">Format</string>
+    <string name="text_desc">Description</string>
+    <string name="text_complete_add_bookmark">Complete add bookmark</string>
+    <string name="text_complete_remove_bookmark">Complete remove bookmark</string>
+    <string name="text_confirm_msg_remove_bookmark">Are you sure you want to remove the bookmark?</string>
+    <string name="text_confirm_msg_add_bookmark">Would you like save bookmark?</string>
+    <string name="text_latest">LATEST</string>
+    <string name="text_search">Search</string>
+    <string name="text_delete">DELETE</string>
+    <string name="text_message_no_search_result">No search results</string>
+    <string name="text_hint_write_memo">Write a bookmark note here.</string>
+    <string name="text_confirm_msg_remove_history">Are you sure you want to remove the history?</string>
+</resources>

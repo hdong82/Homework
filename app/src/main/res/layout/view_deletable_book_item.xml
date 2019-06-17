@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <import type="com.leo.test.bookshelf.model.Book" />
+        
+        <variable
+            name="book"
+            type="com.leo.test.bookshelf.model.Book" />
+    </data>
+    
+    <com.balysv.materialripple.MaterialRippleLayout
+        style="@style/AppTheme.RippleLayout"
+        android:id="@+id/riDeletableBookItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/color_white"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <androidx.appcompat.widget.AppCompatImageView
+                android:background="@drawable/shape_stroke_rectangle_stroke_color"
+                android:id="@+id/ivThumbnail"
+                android:padding="1dp"
+                android:scaleType="centerCrop"
+                bind:url="@{book.getImage()}"
+                android:layout_width="100dp"
+                android:layout_height="115dp"
+                tools:ignore="MissingConstraints" />
+        
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@{book.getTitle()}"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_15"
+                android:textColor="@color/text_color_subtype_02"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivThumbnail"
+                app:layout_constraintTop_toTopOf="parent" />
+    
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:text="@{book.getSubTitle()}"
+                android:textStyle="italic"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="@color/text_color_subtype_03"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:text="@{book.getUrl()}"
+                android:autoLink="web"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+                app:layout_constraintTop_toBottomOf="@id/tvSubTitle" />
+            
+            
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/tvLink"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivThumbnail"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+    
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDelete"
+                    android:padding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_delete"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/color_bg_point"
+                    />
+    
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrice"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{book.getPrice()}"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/text_color_subtype_05"
+                    />
+            </LinearLayout>
+        
+    
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.balysv.materialripple.MaterialRippleLayout>
+</layout>

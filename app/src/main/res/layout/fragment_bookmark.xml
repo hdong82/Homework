@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.leo.test.bookshelf.model.Book" />
+        <import type="com.leo.test.bookshelf.vm.BookMarkViewModel.Order" />
+        <import type="java.util.List" />
+
+        <variable
+            name="bookMarkList"
+            type="List&lt;Book&gt;" />
+    
+        <variable
+            name="vm"
+            type="com.leo.test.bookshelf.vm.BookMarkViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/color_white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:id="@+id/vgSortGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingTop="10dp"
+            android:checkedButton="@id/rbSortLatest"
+            android:orientation="horizontal"
+            android:visibility="@{(bookMarkList != null &amp;&amp; bookMarkList.size() > 0) ? View.VISIBLE : View.GONE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbSortLatest"
+                android:onClick="@{(v) -> vm.onOrderChanged(Order.Latest)}"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_latest" />
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbSortPrice"
+                android:onClick="@{(v) -> vm.onOrderChanged(Order.Price)}"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_price" />
+
+        </RadioGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBookMark"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vgSortGroup"
+            bind:deletable_books="@{bookMarkList}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
